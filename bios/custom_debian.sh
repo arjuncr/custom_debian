@@ -23,7 +23,6 @@ chroot $HOME/LIVE_BOOT/chroot
 
 echo "debian-live" > /etc/hostname
 
-
 apt-get update && \
 apt-get install --no-install-recommends \
     linux-image-686 \
@@ -70,7 +69,6 @@ EOF
 
 touch $HOME/LIVE_BOOT/image/DEBIAN_CUSTOM
 
-
 grub-mkstandalone \
     --format=i386-pc \
     --output=$HOME/LIVE_BOOT/scratch/core.img \
@@ -102,6 +100,3 @@ xorriso \
     -graft-points \
         "${HOME}/LIVE_BOOT/image" \
         /boot/grub/bios.img=$HOME/LIVE_BOOT/scratch/bios.img
-
-
-
